@@ -39,7 +39,7 @@
 - 🎨 **Styled Components** - CSS-in-JS解决方案
 - 🔺 **Three.js** - 3D可视化渲染引擎
 
-### 后端
+### 后端 (可选，当前版本使用模拟数据)
 - 🐍 **Python** - 后端语言
 - 🌶️ **Flask** - 轻量级Web框架
 - 🔐 **SQLite** - 数据存储
@@ -70,7 +70,6 @@
 
 ### 前提条件
 - Node.js (v14+)
-- Python (v3.8+)
 - npm 或 yarn
 
 ### 安装步骤
@@ -88,9 +87,28 @@
    npm install
    ```
 
-3. 安装后端依赖
+3. 运行应用
+   
+   启动前端服务:
    ```bash
-   cd ../backend
+   cd frontend
+   npm run dev
+   ```
+
+4. 在浏览器中访问应用
+   ```
+   http://localhost:5178/  # 端口可能会有所不同，请查看终端输出
+   ```
+
+> 📝 **注意**: 当前版本使用模拟数据运行，无需启动后端服务。API调用已配置为使用前端模拟数据，以便演示所有功能。
+
+### 可选：启动后端服务（如需使用真实API）
+
+如果您想使用真实的后端API而非模拟数据，请按以下步骤操作：
+
+1. 安装后端依赖
+   ```bash
+   cd backend
    python -m venv venv
    # Windows上使用
    venv\Scripts\activate
@@ -99,24 +117,14 @@
    pip install -r requirements.txt
    ```
 
-4. 运行应用
-   
-   启动后端服务:
+2. 启动后端服务:
    ```bash
    cd backend
    python app.py
    ```
-   
-   启动前端服务:
-   ```bash
-   cd frontend
-   npm run dev
-   ```
 
-5. 在浏览器中访问应用
-   ```
-   http://localhost:5178/  # 端口可能会有所不同，请查看终端输出
-   ```
+3. 修改前端配置：
+   打开 `frontend/src/api/api.ts` 文件，将 `const USE_MOCK_DATA = true;` 修改为 `const USE_MOCK_DATA = false;`
 
 ## 📝 使用指南
 
